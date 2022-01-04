@@ -24,5 +24,72 @@
     <button id="div">div</button>
     <div id="result"></div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+  <script>
+    const number1 = document.getElementById('number1');
+    const number2 = document.getElementById('number2');
+
+    document.getElementById('add').addEventListener('click', () => {
+      let value1 = number1.value;
+      let value2 = number2.value;
+
+      let payload = {
+        num1: value1,
+        num2: value2
+      }
+
+      axios.post('http://localhost:3001/add', payload).then(res => {
+        let result = res.data.result;
+        document.getElementById('result').innerText = result;
+      })
+    })
+
+
+    document.getElementById('mul').addEventListener('click', () => {
+      let value1 = number1.value;
+      let value2 = number2.value;
+
+      let payload = {
+        num1: value1,
+        num2: value2
+      }
+
+      axios.post('http://localhost:3001/mul', payload).then(res => {
+        let result = res.data.result;
+        document.getElementById('result').innerText = result;
+      })
+    })
+
+    document.getElementById('sub').addEventListener('click', () => {
+      let value1 = number1.value;
+      let value2 = number2.value;
+
+      let payload = {
+        num1: value1,
+        num2: value2
+      }
+
+      axios.post('http://localhost:3001/sub', payload).then(res => {
+        let result = res.data.result;
+        document.getElementById('result').innerText = result;
+      })
+    })
+
+    document.getElementById('div').addEventListener('click', () => {
+      let value1 = number1.value;
+      let value2 = number2.value;
+
+      let payload = {
+        num1: value1,
+        num2: value2
+      }
+
+      axios.post('http://localhost:3001/div', payload).then(res => {
+        let result = res.data.result;
+        document.getElementById('result').innerText = result;
+      })
+    })
+  </script>
 </body>
 </html>
